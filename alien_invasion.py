@@ -5,7 +5,7 @@ class AlienInvasion:
   """管理游戏资源和行为的类"""
   def __init__(self):
     pygame.init()
-    self.screen = pygame.display.set_mode((1200, 800))
+    self.screen = pygame.display.set_mode((1200, 780))
     pygame.display.set_caption("外星人入侵")
 
   def run_game(self):
