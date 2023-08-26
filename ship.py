@@ -5,7 +5,7 @@ class Ship:
     """管理飞船的类"""
 
     """
-    Ship的方法__init__() 接受两个参数：引用self和指向当前AlienInvasion实例的引用。这让Ship能够访问AlienInvasion 中定义的所有游戏资源
+    Ship的方法__init__()接受两个参数：引用self和指向当前AlienInvasion实例的引用。这让Ship能够访问AlienInvasion 中定义的所有游戏资源
     """
 
     def __init__(self, ai_game):

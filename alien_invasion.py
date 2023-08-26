@@ -1,8 +1,11 @@
 import sys
+import os
 import pygame
 
 from settings import Settings
 from ship import Ship
+
+# from role12_2 import Role12_2
 
 
 class AlienInvasion:
@@ -11,24 +14,37 @@ class AlienInvasion:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
+        os.environ["SDL_VIDEO_CENTERED"] = "1"  # 窗口置于屏幕中央
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
         pygame.display.set_caption(self.settings.win_caption)
+
         self.ship = Ship(self)  # self指向的是当前AlienInvasion实例
+
+        # self.role = Role12_2(self)#练习12-2
 
     def run_game(self):
         """游戏主消息循环"""
         while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            self._check_events()
             # 每次循环都要重绘屏幕
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
+            self._update_screen()
 
-            # 让最近绘制的屏幕可见
-            pygame.display.flip()
+    def _check_events(self):
+        """响应按键和鼠标事件"""
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+    def _update_screen(self):
+        """更新屏幕上的图像，并切换到新屏幕"""
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        # self.role.blitme()#练习12-2
+        # 让最近绘制的屏幕可见
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
