@@ -11,7 +11,6 @@ class Role12_2:
         self.role_image = pygame.image.load("images/12-2角色big彩.bmp")
         self.rect = self.role_image.get_rect()
 
-        # self.rect.midbottom = self.screen_rect.midbottom
         self.rect.center = self.screen_rect.center
 
     def blitme(self):

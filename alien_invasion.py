@@ -39,9 +39,9 @@ class AlienInvasion:
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                self.__check_keydown_events(event)
+                self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
-                self.__check_keyup_events(event)
+                self._check_keyup_events(event)
 
     def _update_screen(self):
         """更新屏幕上的图像，并切换到新屏幕"""
@@ -52,7 +52,7 @@ class AlienInvasion:
         # 让最近绘制的屏幕可见
         pygame.display.flip()
 
-    def __check_keydown_events(self, event):
+    def _check_keydown_events(self, event):
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
@@ -60,7 +60,7 @@ class AlienInvasion:
         elif event.key == pygame.K_q:
             sys.exit()
 
-    def __check_keyup_events(self, event):
+    def _check_keyup_events(self, event):
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
