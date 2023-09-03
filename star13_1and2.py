@@ -2,6 +2,21 @@ import sys
 import os
 
 import pygame
+from pygame.sprite import Sprite
+
+
+class Star(Sprite):
+    def __init__(self, star_game):
+        self.screen = star_game.screen
+        self.image = pygame.image.load("images/7star13-1_50X50.png")
+        self.rect = self.image.get_rect()
+
+        # 每个外星人最初都出现在屏幕的左上角附近each alien appears on screen's top-left nearby
+        self.rect.x = self.rect.width
+        self.rect.y = self.rect.height
+
+        # 存储外星人的精确水平位置store aliens' horizon position precisely
+        self.x = float(self.rect.x)
 
 
 class Star13_1and2:
