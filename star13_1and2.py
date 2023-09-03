@@ -11,11 +11,11 @@ class Star(Sprite):
         self.image = pygame.image.load("images/7star13-1_50X50.png")
         self.rect = self.image.get_rect()
 
-        # 每个外星人最初都出现在屏幕的左上角附近each alien appears on screen's top-left nearby
+        # 每颗星最初都出现在屏幕的左上角附近
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        # 存储外星人的精确水平位置store aliens' horizon position precisely
+        # 存储星的精确水平位置
         self.x = float(self.rect.x)
 
 
