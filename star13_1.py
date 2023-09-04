@@ -1,6 +1,5 @@
 import sys
 import os
-from random import randint
 import pygame
 from pygame.sprite import Sprite
 
@@ -33,7 +32,7 @@ class Star(Sprite):
         self.x = float(self.rect.x)
 
 
-class Star13_1and2:
+class Star13_1:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
@@ -90,5 +89,5 @@ class Star13_1and2:
 
 
 if __name__ == "__main__":
-    ai = Star13_1and2()
-    ai.run_game()
+    star_align = Star13_1()
+    star_align.run_game()
