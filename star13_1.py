@@ -15,7 +15,7 @@ class Settings:
         self.screen_height = 800
         self.bg_color = (255, 255, 255)
 
-        self.win_caption = "作业13-1和13-2"
+        self.win_caption = "作业13-1"
 
 
 class Star(Sprite):
