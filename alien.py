@@ -4,6 +4,7 @@ from pygame.sprite import Sprite
 
 class Alien(Sprite):
     """表示单个外星人的类calss represent individual alien"""
+    """试一试能不能上传GitHub"""
 
     def __init__(self, ai_game):
         super().__init__()
