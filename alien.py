@@ -9,7 +9,7 @@ class Alien(Sprite):
     def __init__(self, ai_game):
         super().__init__()
         self.screen = ai_game.screen
-        self.image = pygame.image.load("images/alien.bmp")
+        self.image = pygame.image.load("images/alien_small.bmp")
         self.rect = self.image.get_rect()
 
         # 每个外星人最初都出现在屏幕的左上角附近each alien appears on screen's top-left nearby
