@@ -6,19 +6,20 @@ from random import randint
 from pygame.sprite import Sprite
 
 
-class Settings:
-    """存储所有设置的类"""
+pygame.init()
+myScreen = pygame.display.set_mode((1200, 768))
+pygame.display.set_caption("作业13-2")
 
-    def __init__(self):
-        """初始化游戏设置"""
-        # 屏幕
-        self.screen_width = 1200
-        self.screen_height = 800
-        self.bg_color = (255, 255, 255)
 
-        self.win_caption = "作业13-2"
+def runWindow():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+        myScreen.fill((255, 255, 255))
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
-    star_rand = Star13_2()
-    star_rand.run_game()
+    runWindow()
