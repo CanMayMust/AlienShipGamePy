@@ -38,8 +38,9 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self.bullets.update()
+            # self.bullets.update()
             self._update_bullets()
+            self._update_aliens()
 
             # 每次循环都要重绘屏幕
             self._update_screen()
@@ -61,6 +62,10 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
         # print(len(self.bullets))#显示当前还有多少颗子弹presents bullets availiable
+
+    def _update_aliens(self):
+        """更新外星人群中所有外星人的位置"""
+        self.aliens.update()
 
     def _update_screen(self):
         """更新屏幕上的图像，并切换到新屏幕"""

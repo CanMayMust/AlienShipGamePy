@@ -1,14 +1,17 @@
+from typing import Any
 import pygame
 from pygame.sprite import Sprite
 
 
 class Alien(Sprite):
     """表示单个外星人的类calss represent individual alien"""
+
     """试一试能不能上传GitHub"""
 
     def __init__(self, ai_game):
         super().__init__()
         self.screen = ai_game.screen
+        self.settings = ai_game.settings
         self.image = pygame.image.load("images/alien_small.bmp")
         self.rect = self.image.get_rect()
 
@@ -18,3 +21,8 @@ class Alien(Sprite):
 
         # 存储外星人的精确水平位置store aliens' horizon position precisely
         self.x = float(self.rect.x)
+
+    def update(self):
+        """向右移动外星人"""
+        self.x += self.settings.alien_speed
+        self.rect.x = self.x
